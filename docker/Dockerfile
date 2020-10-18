@@ -15,6 +15,8 @@ RUN apt-get update -yqq && apt-get install -yqq --no-install-recommends \
     libpq-dev \
     libssl-dev \
     nano \
+    netcat \
+    locales \
     build-essential \
     libsnappy-dev \
     default-libmysqlclient-dev \
@@ -48,6 +50,8 @@ USER airflow
 
 WORKDIR ${AIRFLOW_HOME}
 
-EXPOSE 8080
+EXPOSE 8080 5555 8793
 
-CMD [ "./entrypoint.sh" ]
+ENTRYPOINT [ "./entrypoint.sh" ]
+
+CMD ["scheduler"]

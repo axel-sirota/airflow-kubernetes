@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-docker stop airflow-pycon
-docker rm airflow-pycon
+docker-compose down
 docker build -f docker/Dockerfile -t airflow-docker .
-docker run -p 8080:8080 -d --name airflow-pycon airflow-docker
+docker tag airflow-docker:latest localhost:5000/airflow-docker:latest
+docker push localhost:5000/airflow-docker:latest
+docker-compose up
