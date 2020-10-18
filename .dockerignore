@@ -1,0 +1,7 @@
+venv
+logs
+tmp
+tmp_data
+.helm-output
+.python-version
+.tool-versions
