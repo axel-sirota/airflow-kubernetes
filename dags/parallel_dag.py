@@ -15,10 +15,10 @@ default_args = {
 
 
 with DAG(dag_id="parallel_dag",
-         schedule_interval="@hourly",
+         schedule_interval="@daily",
          start_date=datetime(2020, 11, 1),
          default_args=default_args,
-         catchup=True) as dag:
+         catchup=False) as dag:
     tasks = [DummyOperator(task_id=f"{i}") for i in range(10)]
     end = DummyOperator(task_id="none")
     tasks >> end

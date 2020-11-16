@@ -1,4 +1,5 @@
 venv
+.venv
 logs
 tmp
 tmp_data
