@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-AIRFLOW_HOME=$(pwd)
+export AIRFLOW_HOME=$(pwd)
 airflow initdb
 airflow connections --add --conn_id 'data_path' --conn_type File --conn_extra '{ "path" : "data" }'
 airflow connections --add --conn_id 'postgres' --conn_type Postgres --conn_host 'postgres' --conn_login 'airflow' --conn_password 'airflow' --conn_schema 'pluralsight'
