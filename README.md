@@ -6,5 +6,5 @@ Repo del taller Airflow en Kubernetes para el taller "Airflow en Kubernetes" @ P
 Para setupear el virtual environment para este taller les recomiendo ejecutar:
 
 ```bash
-pip install "apache-airflow[async,celery,crypto,jdbc,kubernetes,password,postgres,redis,slack]==1.10.12" --constraint ./requirements.txt
+pip install "apache-airflow[async,celery,crypto,jdbc,kubernetes,password,postgres,redis,slack]==1.10.12" --constraint docker/airflow/requirements.txt
 ```
