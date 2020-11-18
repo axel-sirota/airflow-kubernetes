@@ -1,0 +1,7 @@
+FROM bitnami/spark
+USER root
+ADD spark.py /
+COPY data.csv /
+RUN pip install --user pyspark numpy
+WORKDIR /
+CMD [ "python", "./spark.py" ]
